@@ -44,13 +44,6 @@ cp .env.example .env
 # Generate application key
 php artisan key:generate
 
-# Konfigurasi database di .env
-# DB_CONNECTION=mysql
-# DB_HOST=127.0.0.1
-# DB_PORT=3306
-# DB_DATABASE=queue_rs
-# DB_USERNAME=root
-# DB_PASSWORD=
 
 # Buat database
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS queue_rs CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"

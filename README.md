@@ -73,7 +73,7 @@ npm run dev
 ```
 
 Akses aplikasi di `http://localhost:8000`
-aasdasdasd
+
 ## Rute Utama
 
 | URL | Deskripsi |

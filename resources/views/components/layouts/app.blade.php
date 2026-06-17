@@ -19,7 +19,7 @@
     <!-- Livewire Styles -->
     @livewireStyles
 </head>
-<body class="min-h-screen bg-gray-50 text-gray-900 antialiased">
+<body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col">
 
     <!-- Top Navigation Bar -->
     <nav class="bg-blue-500 shadow-md">

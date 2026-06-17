@@ -13,6 +13,8 @@ class PatientSearch extends Component
 
     public array $results = [];
 
+    public bool $hasSearched = false;
+
     public ?Patient $selectedPatient = null;
 
     /**
@@ -21,6 +23,7 @@ class PatientSearch extends Component
     public function search(): void
     {
         $this->selectedPatient = null;
+        $this->hasSearched = true;
 
         if (trim($this->query) === '') {
             $this->results = [];

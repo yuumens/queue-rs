@@ -18,7 +18,8 @@
     <div class="flex items-center space-x-2 mb-6">
         <input
             type="text"
-            wire:model.live.debounce.400ms="query"
+            wire:model="query"
+            wire:keydown.enter="search"
             placeholder="{{ $searchMode === 'mr_number' ? 'Masukkan nomor rekam medis...' : 'Masukkan nama pasien...' }}"
             class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
         >
@@ -66,7 +67,7 @@
     @endif
 
     {{-- Patient Not Found Message --}}
-    @if(count($results) === 0 && trim($query) !== '')
+    @if($hasSearched && count($results) === 0 && trim($query) !== '')
         <div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-md">
             <p class="text-sm text-yellow-800">
                 Pasien tidak ditemukan.

@@ -31,7 +31,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('admin.polyclinics.index'));
+            return redirect()->intended(route('admin.dashboard'));
         }
 
         return back()->withErrors([

@@ -32,6 +32,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->midd
 
 // Admin routes
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::get('/', [Admin\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('polyclinics', Admin\PolyclinicController::class);
     Route::resource('doctors', Admin\DoctorController::class);
     Route::resource('practice-schedules', Admin\PracticeScheduleController::class);

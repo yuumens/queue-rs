@@ -48,7 +48,7 @@
                         Beranda
                     </a>
                     @auth
-                        <a href="{{ url('/admin/polyclinics') }}"
+                        <a href="{{ route('admin.dashboard') }}"
                            class="rounded px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-600 transition-colors">
                             Admin
                         </a>
@@ -85,7 +85,7 @@
                     Beranda
                 </a>
                 @auth
-                    <a href="{{ url('/admin/polyclinics') }}"
+                    <a href="{{ route('admin.dashboard') }}"
                        class="block rounded px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors">
                         Admin
                     </a>

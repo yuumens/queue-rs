@@ -5,13 +5,22 @@
         <!-- Page Header -->
         <div class="flex items-center justify-between">
             <h1 class="text-2xl font-semibold text-gray-900">Daftar Dokter</h1>
-            <a href="{{ route('admin.doctors.create') }}"
-               class="inline-flex items-center rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-600 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mr-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                </svg>
-                Tambah Dokter
-            </a>
+            <div class="flex items-center gap-2">
+                <a href="{{ route('admin.dashboard') }}"
+                   class="inline-flex items-center rounded-lg px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-all duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Kembali
+                </a>
+                <a href="{{ route('admin.doctors.create') }}"
+                   class="inline-flex items-center rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-600 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    Tambah Dokter
+                </a>
+            </div>
         </div>
 
         <!-- Success Message -->

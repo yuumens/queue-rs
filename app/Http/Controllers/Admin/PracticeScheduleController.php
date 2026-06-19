@@ -68,10 +68,10 @@ class PracticeScheduleController extends Controller
     /**
      * Display the specified practice schedule (redirects to index).
      */
-    public function show(PracticeSchedule $practiceSchedule): RedirectResponse
-    {
-        return redirect()->route('admin.practice-schedules.index');
-    }
+    // public function show(PracticeSchedule $practiceSchedule): RedirectResponse
+    // {
+    //     return redirect()->route('admin.practice-schedules.index');
+    // }
 
     /**
      * Show the form for editing a practice schedule.

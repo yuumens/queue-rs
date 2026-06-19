@@ -39,7 +39,12 @@ class DoctorController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'polyclinic_id' => ['required', 'exists:polyclinics,id'],
+            'photo_url' => ['nullable', 'string', 'max:2048'],
         ]);
+
+        if (!empty($validated['photo_url'])) {
+            $validated['photo_url'] = $this->extractImgSrc($validated['photo_url']);
+        }
 
         Doctor::create($validated);
 
@@ -73,7 +78,12 @@ class DoctorController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'polyclinic_id' => ['required', 'exists:polyclinics,id'],
+            'photo_url' => ['nullable', 'string', 'max:2048'],
         ]);
+
+        if (!empty($validated['photo_url'])) {
+            $validated['photo_url'] = $this->extractImgSrc($validated['photo_url']);
+        }
 
         $doctor->update($validated);
 
@@ -90,5 +100,22 @@ class DoctorController extends Controller
 
         return redirect()->route('admin.doctors.index')
             ->with('success', 'Dokter berhasil dihapus.');
+    }
+
+    /**
+     * Extract the src attribute from an <img> tag.
+     * If the input is already a plain URL, return it as-is.
+     */
+    private function extractImgSrc(string $input): string
+    {
+        $input = trim($input);
+
+        // If it looks like it contains an <img tag, extract the src
+        if (preg_match('/<img[^>]+src=["\']([^"\']+)["\']/', $input, $matches)) {
+            return $matches[1];
+        }
+
+        // Otherwise return as-is (might be a plain URL)
+        return $input;
     }
 }

@@ -11,6 +11,7 @@ class Doctor extends Model
     protected $fillable = [
         'name',
         'polyclinic_id',
+        'photo_url',
     ];
 
     public function polyclinic(): BelongsTo

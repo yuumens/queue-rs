@@ -32,13 +32,26 @@
                         @foreach ($doctors as $schedule)
                             <button
                                 wire:click="$set('selectedDoctorId', {{ $schedule['doctor_id'] }})"
-                                class="w-full p-3 rounded-lg border-2 text-left transition
+                                class="w-full p-4 rounded-lg border-2 text-left transition flex items-center gap-4
                                     {{ $selectedDoctorId == $schedule['doctor_id'] ? 'ring-2 ring-blue-500 border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-blue-300' }}"
                             >
-                                <span class="font-medium">{{ $schedule['doctor']['name'] }}</span>
-                                <span class="text-sm text-gray-500 block">
-                                    {{ \Carbon\Carbon::parse($schedule['start_time'])->format('H:i') }} - {{ \Carbon\Carbon::parse($schedule['end_time'])->format('H:i') }}
-                                </span>
+                                {{-- Doctor Photo --}}
+                                @if(!empty($schedule['doctor']['photo_url']))
+                                    <img src="{{ $schedule['doctor']['photo_url'] }}" alt="{{ $schedule['doctor']['name'] }}"
+                                         class="h-14 w-14 rounded-full object-cover border-2 border-gray-200 flex-shrink-0">
+                                @else
+                                    <div class="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                        <span class="text-blue-600 font-bold text-lg">{{ strtoupper(substr($schedule['doctor']['name'], 0, 1)) }}</span>
+                                    </div>
+                                @endif
+
+                                {{-- Doctor Info --}}
+                                <div>
+                                    <span class="font-medium text-gray-900 block">{{ $schedule['doctor']['name'] }}</span>
+                                    <span class="text-sm text-gray-500 block">
+                                        {{ \Carbon\Carbon::parse($schedule['start_time'])->format('H:i') }} - {{ \Carbon\Carbon::parse($schedule['end_time'])->format('H:i') }}
+                                    </span>
+                                </div>
                             </button>
                         @endforeach
                     </div>

@@ -6,7 +6,7 @@
         <div class="flex items-center justify-between">
             <h1 class="text-2xl font-semibold text-gray-900">Daftar Dokter</h1>
             <div class="flex items-center gap-2">
-                <a href="{{ route('admin.dashboard') }}"
+                <a href="{{ url()->previous() }}"
                    class="inline-flex items-center rounded-lg px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-all duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -22,13 +22,6 @@
                 </a>
             </div>
         </div>
-
-        <!-- Success Message -->
-        @if (session('success'))
-            <div class="rounded-md bg-green-50 border border-green-200 p-4">
-                <p class="text-sm text-green-800">{{ session('success') }}</p>
-            </div>
-        @endif
 
         <!-- Table -->
         <div class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">

@@ -31,10 +31,10 @@
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-blue-700">
                             Nama
                         </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-blue-700">
+                        <th scope="col" class="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider text-blue-700">
                             Kode
                         </th>
-                        <th scope="col" class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-blue-700">
+                        <th scope="col" class="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider text-blue-700">
                             Aksi
                         </th>
                     </tr>

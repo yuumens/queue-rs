@@ -103,7 +103,8 @@
 
     <!-- Flash Messages -->
     @if (session('success'))
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4">
+        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" x-transition.opacity.duration.500ms
+             class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4">
             <div class="rounded-md bg-green-50 border border-green-200 p-4 text-green-800 text-sm">
                 {{ session('success') }}
             </div>
@@ -111,7 +112,8 @@
     @endif
 
     @if (session('error'))
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4">
+        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)" x-transition.opacity.duration.500ms
+             class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4">
             <div class="rounded-md bg-red-50 border border-red-200 p-4 text-red-800 text-sm">
                 {{ session('error') }}
             </div>
